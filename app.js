@@ -42,8 +42,10 @@ app.use(
     resave: true,
     saveUninitialized: false,
     cookie: {
-      sameSite: true, //back and front in the same host -> localhost
-      secure: false, //not using https
+      sameSite: 'none',
+      secure: true,
+      // sameSite: true, //back and front in the same host -> localhost
+      // secure: false, //not using https
       httpOnly: true, // site only on http
       maxAge: 60000 //cookie time to live
     },
